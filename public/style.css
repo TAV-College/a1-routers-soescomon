@@ -1,0 +1,44 @@
+h1 {
+  color: #ba28b1;
+  text-align: center;
+  font-family: "Lucida Console";
+  font-size: 50px;
+  text-shadow:
+    7px 0 black,
+    0 1px black,
+    1px 0 black,
+    0 -1px black;
+  transition: width 2s;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  text-align: center;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 2rem auto;
+}
+
+td,
+th {
+  padding: 0.25rem;
+}
+
+thead > tr {
+  background-color: #ba28b1;
+  color: white;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #f4caff;
+}
+
+tbody > tr:nth-child(even) {
+  background-color: #ffffff;
+}

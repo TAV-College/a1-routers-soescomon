@@ -1,0 +1,22 @@
+<%- include('parts/header') %>
+<h1>My library</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% books.forEach(function(book) { %>
+            <tr>
+                <td><%= book.title %></td>
+                <td><%= book.author %></td>
+                <td><%= book.isbn%></td>
+            </tr>
+        <%});%>
+    </tbody>
+</table>
+
+<%-include('parts/footer') %>

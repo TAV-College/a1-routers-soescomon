@@ -12,6 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 // Load routers
 app.use("", mainRouter);
@@ -19,6 +20,16 @@ app.use("", bookRouter);
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
+});
+
+//Error handler
+app.all("*", (req, res) => {
+  res.status(404).render("404", { title: "404 Not Found" });
+});
+
+app.use((err, req, res) => {
+  console.error(err.stack);
+  res.status(500).send("Internal Error");
 });
 
 // Run app
